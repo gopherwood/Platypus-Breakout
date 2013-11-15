@@ -9,14 +9,9 @@
         {"type": "entity-container", 
             "entities": [
             {"type": "button-fullscreen"},
-            {"type": "button-jump"},
-            {"type": "button-pickaxe"},
-            {"type": "button-left"},
-            {"type": "button-right"},
-            {"type": "gui"},
-            {"type": "fps-counter"}
+                {"type": "score-keeper"}
             ],
-            "childEvents": ['gui-gem-collected', 'time-elapsed']
+            "childEvents": ["link-entity"]
         }
     ]
 }

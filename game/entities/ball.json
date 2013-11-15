@@ -2,23 +2,50 @@
 	"id": "ball",
 	"components":[
 		{
-            "type": "logic-gravity"
-        },{
 			"type": "collision-basic", 
 			"collisionType": "ball",
+			"bullet": true,
             "solidCollisions": {
-            	"ball": "hit-solid",
-                "hero": "hit-solid",
-                "tiles": "hit-solid"
+//            	"ball": "hit-non-static",
+                "paddle": "",
+                "brick": ["hit-static", "score!"],
+                "tiles": "hit-static"
+            },
+            "softCollisions": {
+                "davey-jones-locker": "destroy-me"
             },
             "shapeType": "circle"
-		},{
-		    "type": "render-debug"
+        },{
+            "type": "logic-rebounder",
+            "elasticity": 1
+        },{
+            "type": "entity-linker",
+            "linkId": "paddle",
+            "events":{
+                "score!": "tally",
+                "destroy-me": "lose-ball"
+            }
+        },{
+            "type": "logic-destroy-me"
+        },{
+            "type": "render-animation",
+            "spriteSheet": {
+                "images": ["tiles"],
+                "frames": {
+                    "width":  16,
+                    "height": 16,
+                    "regY":   8,
+                    "regX":   8
+                },
+                "animations": {
+                    "default":    {"frames": [51,51,51,51,52,52,52,52,53,53,53,53,54,54,54,54,55,55,55,55]}
+                }
+            }
+//        },{
+//		    "type": "render-debug"
         }
 	],
 	"properties":{
-		"z": 50,
-		"width": 240,
-		"height": 240
+		"radius": 7
 	}
 }

@@ -3,7 +3,7 @@
         {
 			"type": "action-layer",
 			"properties": {
-			    "level": "level-1"
+			    "level": "level1"
 			}
         },
         {"type": "multitouch-interface-layer"},

@@ -2,7 +2,7 @@
     "id": "button-fullscreen",
     "components":[{
         "type": "dom-element",
-        "element": "div",
+        "parent": "root",
         "className": "button-fullscreen",
         "onmouseup": "toggle-fullscreen",
         "ontouchend": "toggle-fullscreen"
